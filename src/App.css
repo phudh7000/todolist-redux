@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+*{
+    padding: 0;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background-image: linear-gradient(violet, #fff);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+    max-width: 400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container h1{
+    color: #fff;
+}
+.itemList{
+    padding: 50px;
+    background-color: hotpink;
+    border-radius: 1rem;
+}
+.addItem{
+    margin-bottom: 30px;
+    display: flex;
+}
+.addItem input{
+    width: 100%;
+    border: none;
+    outline: none;
+    line-height: 2.5;
+    padding-left: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-add{
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(250, 236, 249);
+    cursor: pointer;
+}
+.btn-add:hover{
+    background-color: rgb(241, 181, 237);
+}
+.list{
+    overflow-y: auto;
+    height: 300px;
+}
+.list::-webkit-scrollbar{
+    width: 5px;
+}
+.list::-webkit-scrollbar-track{
+    background-color: antiquewhite;
+    opacity: 0;
+}
+.list::-webkit-scrollbar-thumb{
+    background-color: rgb(45, 53, 45);
+    border-radius: 5px;
+}
+.list::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(16, 26, 16);
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 5px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.false{
+    text-decoration: line-through;
+}
+
+.item-text{
+    text-align: center;
+    width: 90%;
+}
+
+.btn-delete{
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: tomato;
+    font-weight: 600;
+}
+
+.btn-delete:hover{
+    background-color: tomato;
+    color: #fff;
 }

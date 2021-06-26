@@ -1,5 +1,6 @@
 import { Component } from 'react'
-
+import {connect} from 'react-redux'
+import * as actions from '../actions'
 class item extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +13,7 @@ class item extends Component {
     }
     handlePick(e) {
         var { id } = this.props;
-        this.props.pick(e.target.checked, id)
+        this.props.handlePick(e.target.checked, id)
     }
 
     render() {
@@ -32,5 +33,15 @@ class item extends Component {
     }
 }
 
+const mapDispatchToProps = (dispatch,props)=>{
+    return{
+        handlePick: (status,index)=>{
+            dispatch(actions.handlePick(status,index));
+        },
+        delete: (index)=>{
+            dispatch(actions.deleteItem(index));
+        }
+    }
+}
 
-export default item;
+export default connect(null,mapDispatchToProps)(item);
